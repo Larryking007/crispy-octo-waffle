@@ -1,33 +1,26 @@
-const {Schema, model} = require("mongoose") 
+const { Schema, model } = require("mongoose");
 
-const todoSchema = new Schema({
-    username: {
-        type: String,
-        required: true,
-        minlength: 3,
-        maxlength: 20
+const todoSchema = new Schema(
+  {
+    title: {
+      type: String,
+      required: true,
+      minlength: 3,
+      maxlength: 20,
     },
-    email: {
-        type: String,
-        required: true,
-        unique: true,
-        minlength: 3,
-        maxlength: 20,
+    description: {
+      type: String,
+      required: true,
+      unique: true,
+      minlength: 3,
+      maxlength: 20,
     },
-    age: {
-        type: Number,
-        default: null,
+    isCompleted: {
+      type: Boolean,
+      default: true,
     },
-    isUser: {
-        type: Boolean,
-        default: true,
-    },
-    isAdmin: {
-        type: Boolean,
-        default: false,
-    }, 
-},
- { timestamps: true }
+  },
+  { timestamps: true }
 );
 const todoModel = model("todos", todoSchema);
 
