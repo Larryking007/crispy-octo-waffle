@@ -5,7 +5,7 @@ config()
 
 async function connect(uri) {
     try {
-        mongoose.connect(uri || proceess.env.MONGO_DB_LOCAL)
+        mongoose.connect(uri || process.env.MONGO_DB_LOCAL)
         console.log("connected to mongodb")
     } catch (error) {
         console.log(error.message)
