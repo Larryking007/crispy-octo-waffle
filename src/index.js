@@ -1,14 +1,16 @@
 const express = require("express");
 const { json } = require("express");
-const flights = require("./controllers/flightController");
-const models = require("./models/Flight");
-const routes = require("./routes/flightRoute");
+const connect = require("./config/database");
+
+connect()
 
 const app = express();
 
 app.use(json());
 
-app.use("/", routes);
+app.get("/", (req, res) => {
+  res.send("Zuri training on Mongodb")
+});
 
 const port = process.env.PORT || 3000;
 

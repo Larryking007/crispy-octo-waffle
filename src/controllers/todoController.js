@@ -1,6 +1,12 @@
-exports.example = (req, res) => {
-    console.log("example")
-    res.send("Flight example")
-}
 
+const Todo = require("../controllers/todoController")
+
+//get all todos
+
+
+//get single todo
+
+//update todo
+
+//delete todo
 
